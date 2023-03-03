@@ -1,0 +1,18 @@
+{
+  "name": "story-design",
+  "version": "1.0.0",
+  "description": "Tutorial for making a story design",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "Desing",
+    "storytelling"
+  ],
+  "author": "Thomas den Oude",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
+}
