@@ -4,7 +4,8 @@
   "description": "Tutorial for making a story design",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "serve": "python3 -m http.server"
   },
   "keywords": [
     "Desing",
