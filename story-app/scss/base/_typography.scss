@@ -1,0 +1,17 @@
+@use "colors";
+
+h1,
+h2 {
+    font-family: 'Taviraj', serif;
+    font-weight: 400;
+    color: colors.$text_light-theme;
+}
+
+p,
+a,
+button,
+ul,
+ol {
+    font-family: 'Work Sans', sans-serif;
+    color: colors.$text_light-theme;
+}

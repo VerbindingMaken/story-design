@@ -1,0 +1,10 @@
+$margin-base: 4;
+
+@function gridFour($multiplier: 1) {
+    @return $margin-base * $multiplier * 1px;
+}
+
+body {
+    padding: gridFour(8);
+    margin: 0;
+}
