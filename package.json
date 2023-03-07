@@ -5,10 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
-    "serve": "python3 -m http.server"
+    "serve": "python3 -m http.server",
+    "sass": "node node_modules/sass/sass --watch story-app/scss:build/story-app/styles",
+    "type": "npx tsc -w"
   },
   "keywords": [
-    "Desing",
+    "Design",
     "storytelling"
   ],
   "author": "Thomas den Oude",

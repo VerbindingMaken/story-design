@@ -1,8 +1,11 @@
 export class Translate {
+    private _browserLanguage = "nl";
 
-    constructor() { }
+    constructor() {
+        this._browserLanguage = this.getLanguageFromBrowser();
+    }
 
-    private getBrowserLanguage(): string {
+    private getLanguageFromBrowser(): string {
         const browserLanguage = window.navigator.language || "en";
         const shortBrowserLanguage = browserLanguage.slice(0, 2);
 
@@ -11,9 +14,11 @@ export class Translate {
 
     public setLanguage(): void {
         const rootElement = document.querySelector('html');
-        const browserLanguage = this.getBrowserLanguage();
+        const browserLanguage = this._browserLanguage;
 
         rootElement?.setAttribute("lang", browserLanguage);
     }
+
+    get browserLanguage() { return this._browserLanguage }
 }
 
