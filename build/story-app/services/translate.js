@@ -9,9 +9,11 @@ export class Translate {
         return shortBrowserLanguage;
     }
     setLanguage() {
-        const rootElement = document.querySelector('html');
+        const rootElement = document.querySelector("html");
         const browserLanguage = this._browserLanguage;
         rootElement === null || rootElement === void 0 ? void 0 : rootElement.setAttribute("lang", browserLanguage);
     }
-    get browserLanguage() { return this._browserLanguage; }
+    get browserLanguage() {
+        return this._browserLanguage;
+    }
 }

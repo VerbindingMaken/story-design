@@ -7,7 +7,8 @@
     "test": "test",
     "serve": "python3 -m http.server",
     "sass": "node node_modules/sass/sass --watch story-app/scss:build/story-app/styles",
-    "type": "npx tsc -w"
+    "type": "npx tsc -w",
+    "format": "npx prettier -w ."
   },
   "keywords": [
     "Design",

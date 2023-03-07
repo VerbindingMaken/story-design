@@ -1,10 +1,10 @@
 export class SearchBox extends HTMLElement {
     constructor() {
         super();
-        this.styleSheet = document.createElement('style');
-        this.input = document.createElement('input');
-        this.leftSlot = document.createElement('slot');
-        this.rightSlot = document.createElement('slot');
+        this.styleSheet = document.createElement("style");
+        this.input = document.createElement("input");
+        this.leftSlot = document.createElement("slot");
+        this.rightSlot = document.createElement("slot");
         this.stylesText = `
       :host {
         display: inline-block;
@@ -46,13 +46,15 @@ export class SearchBox extends HTMLElement {
             this.input.disabled = newValue !== null;
         }
         else if (name === "placeholder") {
-            this.input.placeholder = (typeof newValue === 'number') ? newValue.toString() : newValue;
+            this.input.placeholder =
+                typeof newValue === "number" ? newValue.toString() : newValue;
         }
         else if (name === "size") {
             this.input.size = Number(newValue) ? Number(newValue) : this.input.size;
         }
         else if (name === "value") {
-            this.input.value = (typeof newValue === 'number') ? newValue.toString() : newValue;
+            this.input.value =
+                typeof newValue === "number" ? newValue.toString() : newValue;
         }
     }
     initSearchBox() {
@@ -63,7 +65,9 @@ export class SearchBox extends HTMLElement {
         this.input.onfocus = () => {
             this.setAttribute("focused", "");
         };
-        this.input.onblur = () => { this.removeAttribute("focused"); };
+        this.input.onblur = () => {
+            this.removeAttribute("focused");
+        };
         // Create left slot
         this.leftSlot.setAttribute("name", "left");
         this.leftSlot.textContent = "\u{1f50d}";
@@ -73,7 +77,7 @@ export class SearchBox extends HTMLElement {
             if (this.disabled)
                 return;
             this.dispatchEvent(new CustomEvent("search", {
-                detail: this.input.value
+                detail: this.input.value,
             }));
         };
         // Create right slot
@@ -85,7 +89,7 @@ export class SearchBox extends HTMLElement {
             if (this.disabled)
                 return;
             let clearEvent = new CustomEvent("clear", {
-                cancelable: true
+                cancelable: true,
             });
             this.dispatchEvent(clearEvent);
             if (!clearEvent.defaultPrevented) {
@@ -101,17 +105,33 @@ export class SearchBox extends HTMLElement {
         this.shadow.append(this.input);
         this.shadow.append(this.rightSlot);
     }
-    get placeholder() { return this.getAttribute("placeholder"); }
-    get size() { return this.getAttribute("size"); }
-    get value() { return this.getAttribute("value"); }
-    get disabled() { return this.hasAttribute("disabled"); }
-    get hidden() { return this.hasAttribute("hidden"); }
-    set placeholder(value) { if (value)
-        this.setAttribute("placeholder", value); }
-    set size(value) { if (value)
-        this.setAttribute("size", value); }
-    set value(text) { if (text)
-        this.setAttribute("value", text); }
+    get placeholder() {
+        return this.getAttribute("placeholder");
+    }
+    get size() {
+        return this.getAttribute("size");
+    }
+    get value() {
+        return this.getAttribute("value");
+    }
+    get disabled() {
+        return this.hasAttribute("disabled");
+    }
+    get hidden() {
+        return this.hasAttribute("hidden");
+    }
+    set placeholder(value) {
+        if (value)
+            this.setAttribute("placeholder", value);
+    }
+    set size(value) {
+        if (value)
+            this.setAttribute("size", value);
+    }
+    set value(text) {
+        if (text)
+            this.setAttribute("value", text);
+    }
     set disabled(value) {
         if (value)
             this.setAttribute("disabled", "");
