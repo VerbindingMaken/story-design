@@ -3,3 +3,6 @@
 
 # VS Code
 .DS_Store
+
+# Don't include build
+/build
